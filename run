@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Run a command inside the moomoo-trading conda environment.
+set -euo pipefail
+
+CONDA_SH="/home/arif/miniconda3/etc/profile.d/conda.sh"
+CONDA_ENV="moomoo-trading"
+
+if [[ $# -lt 1 ]]; then
+  echo "Usage: ./run <command> [args...]" >&2
+  echo "Example: ./run python script.py" >&2
+  exit 1
+fi
+
+# shellcheck source=/dev/null
+source "${CONDA_SH}"
+conda activate "${CONDA_ENV}"
+exec "$@"
