@@ -144,13 +144,20 @@ cython_debug/
 # Type checkers / linters
 .pyright/
 
-# Cursor IDE
-.cursor/
+# Cursor IDE (keep shared project rules and hooks)
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
+!.cursor/hooks.json
+!.cursor/hooks/
+!.cursor/hooks/**
 .cursorrules
 .cursorignore
 
-# VS Code (often used alongside Cursor)
-.vscode/
+# VS Code / Cursor workspace (keep interpreter settings)
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
 
 # macOS
 .DS_Store
