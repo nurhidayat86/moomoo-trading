@@ -1,0 +1,2 @@
+moomoo-api>=10.4.6408
+python-dotenv>=1.0.0

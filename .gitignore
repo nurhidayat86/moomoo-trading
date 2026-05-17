@@ -153,11 +153,13 @@ cython_debug/
 !.cursor/hooks/**
 .cursorrules
 .cursorignore
+.cursor/
 
 # VS Code / Cursor workspace (keep interpreter settings)
 .vscode/*
 !.vscode/settings.json
 !.vscode/extensions.json
+.vscode/
 
 # macOS
 .DS_Store
