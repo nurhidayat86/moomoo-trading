@@ -173,3 +173,9 @@ Desktop.ini
 *~
 *.swp
 *.swo
+
+# Market data collector output
+data/
+*.parquet
+src/config.yaml
+

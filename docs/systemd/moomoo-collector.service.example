@@ -1,0 +1,15 @@
+[Unit]
+Description=Moomoo market data collector (TICKER + ORDER_BOOK)
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/arif/projects/moomoo-trading
+ExecStart=/home/arif/projects/moomoo-trading/run python src/collector/main.py --config src/config.yaml
+Restart=always
+RestartSec=5
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target

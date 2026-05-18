@@ -33,25 +33,7 @@ QOT_RIGHT_FIELDS = {
 }
 
 
-def _create_quote_context(settings):
-    from moomoo import OpenQuoteContext
-
-    kwargs: dict[str, Any] = {
-        "host": settings.host,
-        "port": settings.port,
-    }
-    try:
-        import inspect
-        from moomoo import OpenQuoteContext as ctx_cls
-
-        if "ai_type" in inspect.signature(ctx_cls.__init__).parameters:
-            kwargs["ai_type"] = 1
-    except (ImportError, TypeError, ValueError):
-        pass
-
-    encrypt = settings.enable_encrypt
-    kwargs["is_encrypt"] = encrypt if encrypt else False
-    return OpenQuoteContext(**kwargs)
+from quote_context import create_quote_context as _create_quote_context
 
 
 def _normalize_user_info(data: Any) -> dict[str, Any]:
